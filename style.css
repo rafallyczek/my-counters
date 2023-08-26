@@ -1,0 +1,47 @@
+*, *::after, *::before {
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    display: flex;
+    gap: .5rem;
+    background-color: #444;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+p {
+    margin: 0;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+input[type="number"] {
+    width: 100px;
+}
+
+.data, .counter {
+    color: #e4e4e4;
+    background-color: #666;
+    padding: .5rem;
+    height: 150px;
+}
+
+.counter > p {
+    font-size: 1.5rem;
+}
+
+#value {
+    font-weight: bold;
+    color: rgb(100, 180, 255);
+}
