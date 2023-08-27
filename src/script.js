@@ -1,3 +1,6 @@
+//Imports
+import './style.css';
+
 //DOM
 const dividend = document.querySelector("#dividend");
 const divisor = document.querySelector("#divisor");
