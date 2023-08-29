@@ -1,20 +1,65 @@
+/* Imports */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+/* General styles */
+
 *, *::after, *::before {
     box-sizing: border-box; 
 }
 
-body {
-    margin: 0;
-    display: flex;
-    gap: .5rem;
-    background-color: #444;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+:root {
+    --clr-dark: hsl(0, 0%, 27%);
+    --clr-semi-dark: hsl(0, 0%, 40%);
+    --clr-light: hsl(0, 0%, 89%);
+    
+    --clr-accent: hsl(209, 100%, 75%);
+
+    --fw-bold: 700;
+
+    --fs-medium: 1.5rem;
 }
 
-p {
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Roboto';
+}
+
+p, h1, h2 {
     margin: 0;
 }
+
+/* Layout */
+
+.content {
+    display: grid;
+    grid-template: 50px 1fr 50px / 200px 1fr;
+    height: 100%;
+}
+
+.header, .footer {
+    display: grid;
+    align-items: center;
+    grid-column: 1 / -1;
+}
+
+.footer {
+    justify-items: center;
+}
+
+.main {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.main-content {
+    display: grid;
+    gap: .2rem;
+}
+
+/* Inputs */
 
 .input-group {
     display: flex;
@@ -22,26 +67,58 @@ p {
     margin-bottom: 1rem;
 }
 
-button {
-    cursor: pointer;
-}
-
 input[type="number"] {
     width: 100px;
 }
 
+/* Buttons */
+
+button {
+    cursor: pointer;
+}
+
+/* Elements */
+
+.header {
+    padding-left: .5rem;
+}
+
+.nav {
+    padding: .5rem;
+}
+
 .data, .counter {
-    color: #e4e4e4;
-    background-color: #666;
     padding: .5rem;
     height: 150px;
+    width: 300px;
 }
 
-.counter > p {
-    font-size: 1.5rem;
+/* Utility */
+
+.bgc-dark {
+    background-color: var(--clr-dark);
 }
 
-#value {
-    font-weight: bold;
-    color: rgb(100, 180, 255);
+.bgc-semi-dark {
+    background-color: var(--clr-semi-dark);
+}
+
+.bgc-accent {
+    background-color: var(--clr-accent);
+}
+
+.text-clr-light {
+    color: var(--clr-light);
+}
+
+.text-clr-accent {
+    color: var(--clr-accent);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+.fs-medium {
+    font-size: var(--fs-medium);
 }
