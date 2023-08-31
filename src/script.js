@@ -79,7 +79,7 @@ function toggleNav() {
     content.classList.add("nav-expanded");
     icon.classList.add("fa-caret-left");
     navToggleBtn.title = "Hide navigation";
-    navContent.style.display = "block";
+    navContent.style.display = "grid";
   }
 
   navToggleBtn.textContent = "";
