@@ -10,7 +10,7 @@
 
 :root {
     --clr-dark: hsl(0, 0%, 27%);
-    --clr-semi-dark: hsl(0, 0%, 40%);
+    --clr-semi-dark: hsl(0, 0%, 35%);
     --clr-semi-light: hsl(0, 0%, 70%);
     --clr-light: hsl(0, 0%, 89%);
     
@@ -146,6 +146,10 @@ button.add:hover {
     width: 300px;
 }
 
+.github-link:hover {
+    color: var(--clr-light);
+}
+
 /* Utility */
 
 .bgc-dark {
@@ -158,6 +162,14 @@ button.add:hover {
 
 .bgc-accent {
     background-color: var(--clr-accent);
+}
+
+.text-clr-dark {
+    color: var(--clr-dark);
+}
+
+.text-clr-semi-dark {
+    color: var(--clr-semi-dark);
 }
 
 .text-clr-light {
