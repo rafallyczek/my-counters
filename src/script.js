@@ -21,23 +21,33 @@ incrementBtn.addEventListener("click", increment);
 decrementBtn.addEventListener("click", decrement);
 navToggleBtn.addEventListener("click", toggleNav);
 
+//Variables
+let counters = [];
+let currentCounter = 0;
+
 //Functions
 function calculate() {
   const firstNumber = +dividend.value;
   const secondNumber = +divisor.value;
-  value.textContent = Math.ceil(firstNumber / secondNumber);
+  const result = Math.ceil(firstNumber / secondNumber);
+  counters[currentCounter].val = result;
+  value.textContent = result;
   saveData();
 }
 
 function increment() {
   let number = +value.textContent;
-  value.textContent = number + 1;
+  let incremented = number + 1;
+  counters[currentCounter].val = incremented;
+  value.textContent = incremented;
   saveData();
 }
 
 function decrement() {
   let number = +value.textContent;
-  value.textContent = number - 1;
+  let decremented = number - 1;
+  counters[currentCounter].val = decremented;
+  value.textContent = decremented;
   saveData();
 }
 
@@ -45,20 +55,21 @@ function init() {
   if (isEmpty()) {
     saveData();
   } else {
-    value.textContent = localStorage.getItem("counter");
+    counters = JSON.parse(localStorage.getItem("counters"));
+    value.textContent = counters[currentCounter].val;
   }
 }
 
 //Localstorage
 function isEmpty() {
-  if (localStorage.getItem("counter") == null) {
+  if (localStorage.getItem("counters") == null) {
     return true;
   }
   return false;
 }
 
 function saveData() {
-  localStorage.setItem("counter", +value.textContent);
+  localStorage.setItem("counters", JSON.stringify(counters));
 }
 
 //Display
