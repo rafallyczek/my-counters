@@ -38,23 +38,23 @@ export class Counters {
     const secondNumber = +divisor.value;
     const result = Math.ceil(firstNumber / secondNumber);
     this.counters[this.currentCounter].val = result;
-    Display.setCounterValue(result);
+    Display.displayCounterValue(result);
     Localstorage.saveData();
   }
 
   static increment() {
-    let number = Display.getCounterValue();
+    let number = this.counters[this.currentCounter].val;
     let incremented = number + 1;
     this.counters[this.currentCounter].val = incremented;
-    Display.setCounterValue(incremented);
+    Display.displayCounterValue(incremented);
     Localstorage.saveData();
   }
 
   static decrement() {
-    let number = Display.getCounterValue();
+    let number = this.counters[this.currentCounter].val;
     let decremented = number - 1;
     this.counters[this.currentCounter].val = decremented;
-    Display.setCounterValue(decremented);
+    Display.displayCounterValue(decremented);
     Localstorage.saveData();
   }
 

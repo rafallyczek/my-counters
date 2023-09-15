@@ -8,7 +8,7 @@ export class Localstorage {
       this.saveData();
     } else {
       Counters.setCounters(JSON.parse(localStorage.getItem("counters")));
-      Display.setCounterValue(Counters.getCounters()[Counters.getCurrentCounter()].val);
+      Display.displayCounterValue(Counters.getCounters()[Counters.getCurrentCounter()].val);
     }
   }
 

@@ -32,14 +32,9 @@ export class Display {
     navToggleBtn.appendChild(icon);
   }
 
-  static setCounterValue(counterValue) {
+  static displayCounterValue(counterValue) {
     const value = document.querySelector("#value");
     value.textContent = counterValue;
-  }
-
-  static getCounterValue() {
-    const value = document.querySelector("#value");
-    return +value.textContent;
   }
 
 }
