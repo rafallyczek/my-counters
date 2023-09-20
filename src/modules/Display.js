@@ -37,4 +37,9 @@ export class Display {
     value.textContent = counterValue;
   }
 
+  static displayCounterTitle(counterTitle){
+    const title = document.querySelector("#title");
+    title.textContent = counterTitle;
+  }
+
 }
