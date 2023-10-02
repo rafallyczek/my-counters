@@ -1,8 +1,11 @@
+import { Counters } from "./Counters";
+
 export class Display {
 
   static init() {
     const navToggleBtn = document.querySelector(".nav-toggle");
     navToggleBtn.addEventListener("click", this.toggleNav);
+    this.displayCounterList();
   }
 
   static toggleNav() {
@@ -37,9 +40,19 @@ export class Display {
     value.textContent = counterValue;
   }
 
-  static displayCounterTitle(counterTitle){
+  static displayCounterTitle(counterTitle) {
     const title = document.querySelector("#title");
     title.textContent = counterTitle;
+  }
+
+  static displayCounterList() {
+    const counterList = document.querySelector(".counter-list");
+    const counters = Counters.getCounters();
+    for (let i = 0; i < counters.length; i++) {
+      let listItem = document.createElement("li");
+      listItem.textContent = counters[i].title;
+      counterList.appendChild(listItem);
+    }
   }
 
 }

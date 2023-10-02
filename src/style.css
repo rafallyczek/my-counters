@@ -146,6 +146,12 @@ button.add:hover {
     padding: .5rem;
 }
 
+.counter-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 .data, .counter {
     padding: .5rem;
     width: 300px;
